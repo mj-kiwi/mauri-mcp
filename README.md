@@ -1,84 +1,84 @@
-# Turborepo starter
+# Mauri MCP Framework
 
-This Turborepo starter is maintained by the Turborepo core team.
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
+A framework for building MCP (Model-Controller-Prompt) applications using functional programming and decorators.
 
 ## What's inside?
 
-This Turborepo includes the following packages/apps:
+This monorepo includes the following packages:
 
-### Apps and Packages
+### Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `@mj-kiwi/mauri-mcp`: Core package for the MCP Framework
+  - Decorator-based API for tools, prompts, and resources
+  - Multiple transport layers (HTTP, SSE, STDIO)
+  - Built-in authentication (API Key, JWT)
+  - Type-safe with Zod schemas
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### Features
 
-### Utilities
+- **Decorator-based API**: Define tools, prompts, and resources using decorators
+- **Type Safety**: Built-in support for Zod schemas and TypeScript
+- **Multiple Transports**: Support for HTTP, SSE, and STDIO transports
+- **Authentication**: Built-in support for API Key and JWT authentication
+- **Extensible**: Easy to add new transports and authentication methods
 
-This Turborepo has some additional tools already setup for you:
+## Getting Started
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+### Installation
 
-### Build
+```bash
+# Clone the repository
+git clone https://github.com/mj-kiwi/mauri.git
+cd mauri
 
-To build all apps and packages, run the following command:
+# Install dependencies
+pnpm install
 
-```
-cd my-turborepo
+# Build all packages
 pnpm build
 ```
 
-### Develop
+### Development
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
+```bash
+# Start development mode
 pnpm dev
+
+# Run tests
+pnpm test
+
+# Run tests with coverage
+pnpm test:coverage
 ```
 
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
+## Project Structure
 
 ```
-cd my-turborepo
-npx turbo login
+mauri/
+├── packages/
+│   └── core/                 # Core MCP Framework
+│       ├── src/
+│       │   ├── auths/       # Authentication implementations
+│       │   ├── decorators/  # Decorator implementations
+│       │   ├── transports/  # Transport layer implementations
+│       │   ├── registry.ts  # Registry for decorated items
+│       │   └── server.ts    # Main server implementation
+│       └── package.json
+└── package.json
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+## Documentation
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+For detailed documentation, please refer to the [core package README](./packages/core/README.md).
 
-```
-npx turbo link
-```
+## Contributing
 
-## Useful Links
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-Learn more about the power of Turborepo:
+## License
 
-- [Tasks](https://turborepo.com/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turborepo.com/docs/core-concepts/caching)
-- [Remote Caching](https://turborepo.com/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.com/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turborepo.com/docs/reference/configuration)
-- [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
