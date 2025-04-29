@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { Prompt } from "../prompt.js";
+import { Prompt } from "../../../src/decorators/prompt.js";
 import "reflect-metadata";
 
 describe("Prompt Decorator", () => {
@@ -12,9 +12,9 @@ describe("Prompt Decorator", () => {
         {
           name: "name",
           description: "The name to greet",
-          required: true
-        }
-      ]
+          required: true,
+        },
+      ],
     })
     testPrompt: string | undefined;
   }
@@ -36,8 +36,8 @@ describe("Prompt Decorator", () => {
       {
         name: "name",
         description: "The name to greet",
-        required: true
-      }
+        required: true,
+      },
     ]);
   });
 });

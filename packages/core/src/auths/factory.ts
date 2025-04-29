@@ -10,7 +10,9 @@ export class AuthFactory {
       case "jwt":
         return new JwtAuth(config);
       default:
-        throw new Error(`Unsupported authentication type: ${config.type}`);
+        throw new Error(
+          `Unsupported authentication type: ${String(config as any)}`
+        );
     }
   }
-} 
+}

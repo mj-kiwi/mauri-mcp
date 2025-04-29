@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { ApiKeyAuth } from "../apiKey.js";
+import { ApiKeyAuth } from "../../../src/auths/apiKey.js";
 
 describe("ApiKeyAuth", () => {
   const config = {

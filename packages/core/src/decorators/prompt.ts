@@ -13,6 +13,7 @@ export interface PromptConfig {
   description: string;
   template: string;
   arguments?: PromptArgument[];
+  variables?: string[];
 }
 
 export interface PromptMetadata {
@@ -28,7 +29,7 @@ export function Prompt(config: PromptConfig) {
       name,
       description: config.description,
       template: config.template,
-      arguments: config.arguments || []
+      arguments: config.arguments || [],
     };
 
     Reflect.defineMetadata("prompts", prompts, target);

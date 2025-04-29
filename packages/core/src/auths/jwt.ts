@@ -28,19 +28,19 @@ export class JwtAuth {
 
       return {
         isValid: true,
-        payload
+        payload,
       };
-    } catch (error) {
-      if (error.message.includes('exp')) {
+    } catch (error: unknown) {
+      if (error instanceof Error && error.message.includes("exp")) {
         return {
           isValid: false,
-          error: 'Token expired'
+          error: "Token expired",
         };
       }
       return {
         isValid: false,
-        error: 'Invalid token'
+        error: "Invalid token",
       };
     }
   }
-} 
+}

@@ -3,9 +3,11 @@ import { ResourceDefinition, ResourceContent } from "../types.js";
 
 const RESOURCE_METADATA_KEY = Symbol("resource:metadata");
 
-export interface ResourceConfig extends Omit<ResourceDefinition, 'uri'> {
-  uri?: string;  // Optional in config, will be generated if not provided
-  content: ResourceContent;
+export interface ResourceConfig extends Omit<ResourceDefinition, "uri"> {
+  uri?: string; // Optional in config, will be generated if not provided
+  content?: ResourceContent;
+  type?: string; // For specifying resource type (e.g., 'json')
+  data?: any; // For directly providing resource data
 }
 
 export interface ResourceMetadata {
@@ -22,7 +24,7 @@ export function Resource(config: ResourceConfig): PropertyDecorator {
       uri,
       property: propertyKey,
     };
-    
+
     Reflect.defineMetadata("resources", resources, target);
 
     Object.defineProperty(target, propertyKey, {

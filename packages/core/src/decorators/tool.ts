@@ -7,7 +7,7 @@ const TOOL_METADATA_KEY = Symbol("tool:metadata");
 export interface ToolConfig {
   name?: string;
   description?: string;
-  inputSchema: {
+  inputSchema?: {
     type: "object";
     properties: Record<string, any>;
     required?: string[];

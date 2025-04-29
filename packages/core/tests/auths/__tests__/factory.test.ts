@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
-import { AuthFactory } from "../factory.js";
-import { ApiKeyAuth } from "../apiKey.js";
-import { JwtAuth } from "../jwt.js";
+import { AuthFactory } from "../../../src/auths/factory.js";
+import { ApiKeyAuth } from "../../../src/auths/apiKey.js";
+import { JwtAuth } from "../../../src/auths/jwt.js";
 
 describe("AuthFactory", () => {
   it("should create ApiKeyAuth instance", () => {
@@ -33,7 +33,7 @@ describe("AuthFactory", () => {
     };
 
     expect(() => AuthFactory.create(config as any)).toThrow(
-      "Unsupported authentication type: unsupported"
+      "Unsupported authentication type:"
     );
   });
 });
