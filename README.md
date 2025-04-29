@@ -1,6 +1,8 @@
 # Mauri MCP Framework
 
-A framework for building MCP (Model-Controller-Prompt) applications using functional programming and decorators.
+A framework for building Model Context Protocol (MCP) applications using functional programming and decorators.
+
+> **⚠️ WARNING: This package is currently under development and not ready for production use.**
 
 ## What's inside?
 
@@ -8,7 +10,7 @@ This monorepo includes the following packages:
 
 ### Packages
 
-- `@mj-kiwi/mauri-mcp`: Core package for the MCP Framework
+- `@mj-kiwi/mauri-mcp`: Core package for the Model Context Protocol Framework
   - Decorator-based API for tools, prompts, and resources
   - Multiple transport layers (HTTP, SSE, STDIO)
   - Built-in authentication (API Key, JWT)

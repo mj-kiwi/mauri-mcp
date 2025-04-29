@@ -1,6 +1,8 @@
 # Mauri MCP Framework
 
-A framework for building MCP (Model-Controller-Prompt) applications using functional programming and decorators.
+A framework for building Model Context Protocol (MCP) applications using functional programming and decorators.
+
+> **⚠️ WARNING: This package is currently under development and not ready for production use.**
 
 ## Features
 
@@ -242,4 +244,4 @@ const server = new MCPServer({
 
 ## License
 
-MIT 
+MIT
